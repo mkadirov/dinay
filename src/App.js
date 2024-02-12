@@ -11,8 +11,8 @@ function App() {
   const [endLocation, setEndLocation] = useState('');
   const [list, setList] = useState([])
   const [refNum, setRefNum] = useState('')
-  const [marketId, setMarketId] = useState(0);
-  const [index, setIndex] = useState(0)
+  // const [marketId, setMarketId] = useState(0);
+  // const [index, setIndex] = useState(0)
   
 
   // const handleCheckboxChange = () => {
@@ -26,7 +26,7 @@ function App() {
 
   const createList = () => {
     const newList = locations
-    setList(newList.filter(item => item.refNumber == refNum))
+    setList(newList.filter(item => item.refNumber === refNum))
   }
 
 
