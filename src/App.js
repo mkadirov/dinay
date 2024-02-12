@@ -26,7 +26,7 @@ function App() {
 
   const createList = () => {
     const newList = locations
-    setList(newList.filter(item => item.refNumber === refNum))
+    setList(newList.filter(item => item.refNumber == refNum))
   }
 
 
@@ -61,7 +61,7 @@ function App() {
 
   return (
     <Box sx={{width: '100vw',  marginTop: 2}}>
-      <Box display={'flex'} >
+      <Box display={'flex'} sx={{margin: 2}}>
         <TextField 
           id="outlined-basic" 
           label="Sendungsnummer" 
