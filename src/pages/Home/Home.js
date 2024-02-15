@@ -83,6 +83,7 @@ function Home() {
             <Divider/>
             {orderList.map((item, index) => {
                 const sts = statusList.find(s => s.id == item.statusId)
+                const market = marketList.find(m => m.id == item.marketId)
                 return (
                     <Box style={{ order: index }}>
                         <Grid container >
@@ -92,8 +93,16 @@ function Home() {
                                 </Box>
                             </Grid>
                             <Grid item xs={7} md = {7} >
-                                <Box sx={{marginY: 1}}>
-    
+                                <Box marginLeft={2} sx={{marginY: 1}}>
+                                    <Typography style={{fontSize: '14px'}}>
+                                        Order NR: {item.number}
+                                    </Typography>
+                                    <Typography style={{fontSize: '14px'}}>
+                                        Qabul qiluvchi: {market.name}
+                                    </Typography>
+                                    <Typography style={{fontSize: '14px'}}>
+                                        Manzil: {market.adresse}
+                                    </Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={3} md = {4} >
@@ -103,7 +112,7 @@ function Home() {
                                             <img src={sts.logo} alt="" />
                                         </Box>
                                     </Box>
-                                    <Typography sx={{fontSize: '9px'}}>
+                                    <Typography sx={{fontSize: '9px'}} >
                                         {sts.name}
                                     </Typography>
                                 </Box>
