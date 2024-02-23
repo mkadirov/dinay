@@ -3,23 +3,27 @@ import {Button, Box, TextField, Grid, Checkbox, Divider, Typography} from '@mui/
 import courier from '../../assets/Courier.png'
 import { Shipments, markets, orders, statuses } from '../../data';
 import boxLogo from '../../assets/Box.png'
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
 
-    const [startLocation, setStartLocation] = useState('');
-    const [endLocation, setEndLocation] = useState('');
     const [orderList, setOrderList] = useState([])
     const [refNum, setRefNum] = useState('')
     const [marketList, setMarketList] = useState([]);
     const [statusList, setStatusList] = useState([]);
     const [shipmentsList, setShipmentsList] = useState([])
-
+    const navigate = useNavigate();
+    
     useEffect(()=> {
         setMarketList(markets);
         setStatusList(statuses);
         setShipmentsList(Shipments);
     }, [])
+
+    const handelClick = (id) => {
+        navigate(`/order/${id}`)
+    }
 
     
     const createList = () => {
@@ -30,34 +34,7 @@ function Home() {
     }
   
   
-    const getCurrentLocation = () => {
-      // Check if Geolocation is supported
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            // Extract latitude and longitude from the position object
-            const { latitude, longitude } = position.coords;
-            // Set the current location as the start location
-            setStartLocation(`${latitude},${longitude}`);
-          },
-          (error) => {
-            console.error('Error getting current location:', error.message);
-          }
-        );
-      } else {
-        console.error('Geolocation is not supported');
-      }
-    };
-  
-    const handleNavigation = (loc) => {
-      getCurrentLocation();
-      setEndLocation(loc)
-      // Construct the Google Maps URL with the start and end locations
-      const mapsUrl = `https://www.google.com/maps/dir/${startLocation}/${endLocation}`;
-  
-      // Open the URL in a new tab or window
-      window.open(mapsUrl, '_blank');
-    };
+   
   
     return (
       <Box sx={{width: '100vw',  marginTop: 2, position: 'relative' }}>
@@ -85,7 +62,7 @@ function Home() {
                 const sts = statusList.find(s => s.id == item.statusId)
                 const market = marketList.find(m => m.id == item.marketId)
                 return (
-                    <Box style={{ order: index }}>
+                    <Box style={{ order: index }} onClick = {() => handelClick(item.id)}>
                         <Grid container >
                             <Grid item xs={2} md = {1} padding={1}>
                                 <Box className="image-box">

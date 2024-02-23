@@ -250,36 +250,42 @@ export const products = [
         id: 1,
         name: 'Olma',
         volum: 0.5,
-        price: 3000
+        price: 3000,
+        articleNumber: 1102211456
     },
     {
         id: 2,
         name: 'Olma',
         volum: 1,
-        price: 5000
+        price: 5000,
+        articleNumber: 1102211245
     },
     {
         id: 3,
         name: 'Gilos',
         volum: 0.5,
-        price: 3000
+        price: 3000,
+        articleNumber: 1101127658
     },{
         id: 4,
         name: 'Gilos',
         volum: 1,
-        price: 5000
+        price: 5000,
+        articleNumber: 1102211567
     },
     {
         id: 5,
         name: 'Anor',
         volum: 0.5,
-        price: 4000
+        price: 4000,
+        articleNumber: 1102211675
     },
     {
         id: 6,
         name: 'Anor',
         volum: 1,
-        price: 6000
+        price: 6000,
+        articleNumber: 1102211998
     }
 ]
 
