@@ -1,27 +1,37 @@
 import React from 'react'
+import {Link, useNavigate} from 'react-router-dom'
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import MailIcon from '@mui/icons-material/Mail';
 import PersonIcon from '@mui/icons-material/Person';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import ListAltIcon from '@mui/icons-material/ListAlt';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import QrCode2Icon from '@mui/icons-material/QrCode2';
 
-function Menu() {
+function Menu({setIsDrawerOpen}) {
+
+  const navigate = useNavigate()
+
+  const handelNavigate = (link) => {
+    navigate(`/${link}`)
+    setIsDrawerOpen(false)
+  }
   return (
     <List> 
-        <ListItem  disablePadding>
+        
+          <ListItem  disablePadding onClick={() => handelNavigate('shipments')}>
             <ListItemButton>
                 <ListItemIcon>
                    <ListAltIcon />
                 </ListItemIcon>
               <ListItemText primary='Jönatmalar' />
             </ListItemButton>
-        </ListItem>
+          </ListItem>
+       
         <ListItem  disablePadding>
             <ListItemButton>
                 <ListItemIcon>
@@ -38,7 +48,7 @@ function Menu() {
               <ListItemText primary='Mijozlar' />
             </ListItemButton>
         </ListItem>
-        <ListItem  disablePadding>
+        <ListItem  disablePadding onClick={() => handelNavigate('transports')}>
             <ListItemButton>
                 <ListItemIcon>
                    <LocalShippingIcon />
@@ -46,6 +56,24 @@ function Menu() {
               <ListItemText primary='Transportlar' />
             </ListItemButton>
         </ListItem>
+        <ListItem  disablePadding onClick={() => handelNavigate('orders')}>
+            <ListItemButton>
+                <ListItemIcon>
+                   <BookmarkBorderIcon/>
+                </ListItemIcon>
+              <ListItemText primary='Buyurtmalar' />
+            </ListItemButton>
+        </ListItem>
+        
+        <ListItem  disablePadding onClick={() => handelNavigate('products')}>
+          <ListItemButton>
+              <ListItemIcon>
+                   <QrCode2Icon/>
+              </ListItemIcon>
+            <ListItemText primary='Mahsulotlar' />
+           </ListItemButton>
+        </ListItem>
+        
     </List>
   )
 }

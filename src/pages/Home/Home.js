@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Button, Box, TextField, Grid, Checkbox, Divider, Typography} from '@mui/material';
 import courier from '../../assets/Courier.png'
-import { Shipments, markets, orders, statuses } from '../../data';
+import { markets, orders, shipmentList, statuses } from '../../data';
 import boxLogo from '../../assets/Box.png'
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ function Home() {
     useEffect(()=> {
         setMarketList(markets);
         setStatusList(statuses);
-        setShipmentsList(Shipments);
+        setShipmentsList(shipmentList);
     }, [])
 
     const handelClick = (id) => {
@@ -107,7 +107,7 @@ function Home() {
                 <img src={courier} alt="" />
             </Box>
         </Box>
-    </Box>
+      </Box>
     );
 }
 

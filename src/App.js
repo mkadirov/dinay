@@ -4,6 +4,12 @@ import {Route, Routes, BrowserRouter, useNavigate} from 'react-router-dom'
 import Header from './components/Header/Header'
 import Home from './pages/Home/Home'
 import Order from './pages/Order/Order'
+import Product from './pages/Product/Product'
+import Shipments from './pages/Shipments/Shipments'
+import Shipment from './pages/Shipment/Shipment'
+import Orders from './pages/Orders/Orders'
+import Products from './pages/Products/Products'
+import Transports from './pages/Transports/Transports'
 
 function App() {
   return (
@@ -16,6 +22,12 @@ function App() {
             <Routes>
               <Route path='/' element = {<Home/>}/>
               <Route path='/order/:id' element = {<Order/>}/>
+              <Route path='/orders' element = {<Orders/>}/>
+              <Route path='/product/:id' element = {<Product/>}/>
+              <Route path='/products' element = {<Products/>}/>
+              <Route path='/shipments' element = {<Shipments/>}/>
+              <Route path='/shipment/:id' element = {<Shipment/>}/>
+              <Route path='/transports' element = {<Transports/>}/>
             </Routes>
         </BrowserRouter>
 

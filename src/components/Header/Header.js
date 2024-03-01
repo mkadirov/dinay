@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import {Box, Drawer} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,6 +12,7 @@ import Menu from './Menu';
 
 export default function Header() {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+    const navigate = useNavigate()
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -25,10 +27,12 @@ export default function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Dinay
-          </Typography>
-          <Button color="inherit">Logout</Button>
+          <Box onClick={() => navigate('/')} sx={{cursor: 'pointer'}}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
+              Dinay
+            </Typography>
+          </Box>
+          
         </Toolbar>
       </AppBar>
 
@@ -47,7 +51,7 @@ export default function Header() {
 
             
                 </Box>
-                     <Menu/>
+                     <Menu setIsDrawerOpen = {setIsDrawerOpen}/>
                 </Box>
         </Box>
       </Drawer>
