@@ -18,11 +18,11 @@ useEffect(() => {
     setMarket(markets.find(item => id == order.marketId))
 }, [order])
 
-  const getCurrentLocation = () => {
+const getCurrentLocation = () => {
     // Check if Geolocation is supported
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
           // Extract latitude and longitude from the position object
           const { latitude, longitude } = position.coords;
           // Set the current location as the start location
@@ -50,7 +50,7 @@ useEffect(() => {
     
 
   return (
-    <Card sx={{ minWidth: 275, backgroundColor: grey[200] }}>
+    <Card sx={{ minWidth: 275, backgroundColor: grey[200] }}> 
         <CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Buyurtma raqami:

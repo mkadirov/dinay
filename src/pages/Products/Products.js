@@ -2,10 +2,12 @@ import React from 'react'
 import {Box, Grid, Typography} from '@mui/material'
 import { products } from '../../data'
 import ProductCard from '../../components/Cards/ProductCard'
+import BaseLayout from '../../components/Layout/BaseLayout'
 
 function Products() {
     const list = products
   return (
+    <BaseLayout>
     <Box marginTop={3}>
         <Box textAlign={'center'} >
             <Typography variant='h4' marginY={4}>
@@ -26,6 +28,7 @@ function Products() {
             </Grid>
         </Box>
     </Box>
+    </BaseLayout>
   )
 }
 

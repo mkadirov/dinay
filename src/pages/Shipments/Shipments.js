@@ -9,14 +9,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import BaseLayout from '../../components/Layout/BaseLayout';
 
 function Shipments() {
     const navigate = useNavigate();
     const rows = shipmentList
     
   return (
-    <Box sx={{marginTop: 3, paddingX: 5}}>
-      <Box sx={{marginY: 2, textAlign: 'center'}}>
+    <BaseLayout>
+      <Box>
+      <Box sx={{ textAlign: 'center'}}>
         <Typography variant='h5'>
           Jönatmalar röyxati
         </Typography>
@@ -57,6 +59,7 @@ function Shipments() {
       </Table>
     </TableContainer>
     </Box>
+    </BaseLayout>
   )
 }
 

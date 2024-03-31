@@ -10,6 +10,7 @@ import Shipment from './pages/Shipment/Shipment'
 import Orders from './pages/Orders/Orders'
 import Products from './pages/Products/Products'
 import Transports from './pages/Transports/Transports'
+import ExcelReader from './pages/ExcelReader/ExcelReader'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
        value = {{}}
       >
         <BrowserRouter>
-          <Header/>
+          {/* <Header/> */}
             <Routes>
               <Route path='/' element = {<Home/>}/>
               <Route path='/order/:id' element = {<Order/>}/>
@@ -28,6 +29,7 @@ function App() {
               <Route path='/shipments' element = {<Shipments/>}/>
               <Route path='/shipment/:id' element = {<Shipment/>}/>
               <Route path='/transports' element = {<Transports/>}/>
+              <Route path='/excel_reader' element = {<ExcelReader/>}/>
             </Routes>
         </BrowserRouter>
 

@@ -4,6 +4,7 @@ import courier from '../../assets/Courier.png'
 import { markets, orders, shipmentList, statuses } from '../../data';
 import boxLogo from '../../assets/Box.png'
 import { useNavigate } from 'react-router-dom';
+import BaseLayout from '../../components/Layout/BaseLayout';
 
 
 function Home() {
@@ -37,7 +38,8 @@ function Home() {
    
   
     return (
-      <Box sx={{width: '100vw',  marginTop: 2, position: 'relative' }}>
+      <BaseLayout>
+         <Box sx={{width: '100vw',  marginTop: 2, position: 'relative' }}>
         <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
             <Box display={'flex'} sx={{margin: 2}}>
               <TextField 
@@ -108,6 +110,7 @@ function Home() {
             </Box>
         </Box>
       </Box>
+      </BaseLayout>
     );
 }
 

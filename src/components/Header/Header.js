@@ -41,7 +41,7 @@ export default function Header() {
       open = {isDrawerOpen}
       onClose={() => setIsDrawerOpen(false)}
       >
-        <Box sx={{width: {xs: '80vw', md: '30vw', lg: '20vw', display: 'flex', justifyContent: 'center'}}} role='presentation'>
+        <Box  sx={{width: {xs: '80vw', md: '30vw', lg: '20vw'}, display: 'flex', justifyContent: 'center', minHeight: '100vh'}} role='presentation'>
           
             <Box sx={{width: '90%', py: 2}}>
                 <Box justifyContent='space-between' display='flex' alignItems='center' sx={{borderBottom: '1px solid black', pb: 1}}>
